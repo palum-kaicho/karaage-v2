@@ -156,41 +156,102 @@ body {
     transform: translateY(0);
 }
 
-footer {
-    margin-top: 120px;
-    padding: 60px 0 40px 0;
-    border-top: 1px solid rgba(0, 240, 255, 0.1);
+/* ==========================================================================
+   からあげちゃん専用：涼夏ネオンリフレクション・フッターCSS
+   ========================================================================== */
+
+.exclusive-footer {
+    margin-top: 140px;
+    padding-top: 40px;
+    padding-bottom: 60px;
     text-align: center;
+    position: relative;
 }
 
-.footer-mvp {
+/* 水面に映る花火の光のような、涼しげなグラデーションライン */
+.footer-neon-line {
+    width: 60px;
+    height: 2px;
+    margin: 0 auto 50px auto;
+    background: linear-gradient(90deg, transparent, #00f0ff, #b967ff, transparent);
+    box-shadow: 0 0 10px #00f0ff;
+}
+
+.footer-wrap {
+    display: inline-block;
+}
+
+/* 控えめで洗練された大人のフォント感 */
+.footer-title {
     font-family: "Montserrat", sans-serif;
-    font-size: 34px;
-    font-weight: 900;
-    letter-spacing: 3px;
-    background: linear-gradient(90deg, #00f0ff, #b967ff, #ff4fd8, #00f0ff);
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: shineFlow 5s linear infinite;
-}
-
-.footer-name {
-    font-size: 36px;
-    font-weight: 700;
-    letter-spacing: 4px;
-    color: #fff;
-    margin: 15px 0;
-    text-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
-}
-
-.footer-sub {
-    font-family: "Montserrat", sans-serif;
-    font-size: 13px;
+    font-size: 14px;
+    font-weight: 300;
     color: #8a99ad;
+    letter-spacing: 8px;
+    margin: 0 0 20px 0;
+    text-transform: uppercase;
+    opacity: 0.7;
+}
+
+/* 「からあげちゃん」の名前を極上のアクアネオンで包む */
+.footer-main {
+    font-size: 38px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #fff;
+    margin: 0 0 25px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 名前の前につけるスタイリッシュなアクセント */
+.footer-main .prefix {
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    color: #00f0ff;
+    margin-right: 12px;
+    font-style: italic;
+    text-shadow: 0 0 8px rgba(0, 240, 255, 0.6);
+}
+
+/* 線香花火のように優しく揺らめく文字発光 */
+.footer-main .dynamic-name {
+    text-shadow: 
+        0 0 12px #00f0ff,
+        0 0 25px rgba(185, 103, 255, 0.5);
+    animation: fireworkGlow 4s infinite ease-in-out;
+}
+
+.footer-sign {
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: #fff;
     letter-spacing: 3px;
-    opacity: 0.6;
+    margin: 0 0 8px 0;
+    opacity: 0.9;
+}
+
+.footer-date {
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    color: #52637a;
+    letter-spacing: 4px;
+    margin: 0;
+}
+
+/* 静かに息をするように明滅する新アニメーション */
+@keyframes fireworkGlow {
+    0%, 100% {
+        text-shadow: 0 0 10px #00f0ff, 0 0 20px rgba(185, 103, 255, 0.4);
+        transform: scale(1);
+    }
+    50% {
+        text-shadow: 0 0 18px #00f0ff, 0 0 35px #b967ff;
+        transform: scale(1.02);
+    }
 }
 
 @keyframes shineFlow {
