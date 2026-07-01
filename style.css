@@ -1,0 +1,199 @@
+/* ==========================================================================
+   新コンセプト：夏・花火・涼感 プレミアムカスタムCSS（画像最適化版）
+   ========================================================================== */
+
+body {
+    margin: 0;
+    font-family: "Noto Serif JP", serif;
+    background: radial-gradient(circle at center, #0a1128 0%, #02040a 100%);
+    color: #fff;
+    overflow-x: hidden;
+}
+
+#fireworks {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.wrapper {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 60px 18px;
+    position: relative;
+    z-index: 10;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.header h1 {
+    font-family: "Montserrat", "Noto Serif JP", serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 4px;
+    text-shadow: 
+        0 0 10px #00f0ff,
+        0 0 20px #b967ff,
+        0 0 40px rgba(0, 240, 255, 0.4);
+}
+
+.story {
+    margin: 40px 0;
+    padding: 30px 28px;
+    background: rgba(5, 10, 25, 0.65);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 16px;
+    border: 1px solid rgba(0, 240, 255, 0.15);
+    box-shadow: 
+        0 20px 50px rgba(0, 0, 0, 0.6),
+        inset 0 0 20px rgba(0, 240, 255, 0.03);
+    white-space: pre-wrap;
+    line-height: 2.3;
+    font-size: 15px;
+    letter-spacing: 0.09em;
+    font-weight: 400;
+}
+
+/* スクショ画像用デザイン（スマートフォンの画面比率に最適化） */
+.card {
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    background: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+    margin: 45px auto;
+    max-width: 400px; /* 縦長スクショが間延びしないベストサイズ */
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: #00f0ff;
+    box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.7),
+        0 0 25px rgba(0, 240, 255, 0.3);
+}
+
+.card img {
+    width: 100%;
+    display: block;
+    height: auto;
+}
+
+/* クライマックスのロック画面画像用コンテナ */
+.end {
+    margin-top: 100px;
+    text-align: center;
+}
+
+.end-image-wrap {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid rgba(185, 103, 255, 0.3);
+    box-shadow: 
+        0 0 40px rgba(185, 103, 255, 0.25),
+        0 20px 60px rgba(0, 0, 0, 0.8);
+    transition: transform 0.5s ease;
+}
+
+.end-image-wrap:hover {
+    transform: scale(1.02);
+    border-color: #b967ff;
+    box-shadow: 0 0 50px rgba(185, 103, 255, 0.5);
+}
+
+.end-image-wrap img {
+    width: 100%;
+    display: block;
+    height: auto;
+}
+
+.end-text {
+    margin-top: 50px;
+    font-size: 15px;
+    line-height: 2.5;
+    letter-spacing: 0.08em;
+}
+
+.glow {
+    color: #fff;
+    font-weight: 700;
+    font-size: 20px;
+    text-shadow: 
+        0 0 10px #00f0ff,
+        0 0 25px #b967ff;
+}
+
+.vague-glow {
+    color: #fff;
+    font-weight: 700;
+    text-shadow: 0 0 8px rgba(0, 240, 255, 0.5);
+    animation: coolPulse 4s infinite ease-in-out;
+}
+
+@keyframes coolPulse {
+    0%, 100% { text-shadow: 0 0 8px rgba(0, 240, 255, 0.5); opacity: 0.9; }
+    50% { text-shadow: 0 0 15px #00f0ff, 0 0 25px #b967ff; opacity: 1; }
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1.4s cubic-bezier(0.215, 0.610, 0.355, 1), transform 1.4s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+footer {
+    margin-top: 120px;
+    padding: 60px 0 40px 0;
+    border-top: 1px solid rgba(0, 240, 255, 0.1);
+    text-align: center;
+}
+
+.footer-mvp {
+    font-family: "Montserrat", sans-serif;
+    font-size: 34px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    background: linear-gradient(90deg, #00f0ff, #b967ff, #ff4fd8, #00f0ff);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shineFlow 5s linear infinite;
+}
+
+.footer-name {
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: #fff;
+    margin: 15px 0;
+    text-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+}
+
+.footer-sub {
+    font-family: "Montserrat", sans-serif;
+    font-size: 13px;
+    color: #8a99ad;
+    letter-spacing: 3px;
+    opacity: 0.6;
+}
+
+@keyframes shineFlow {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
